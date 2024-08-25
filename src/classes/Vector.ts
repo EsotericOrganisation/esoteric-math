@@ -1,6 +1,6 @@
 import {Comparable} from "../interfaces/Comparable.js";
-import {arrayEquals} from "../utility/array-utility.js";
 import Decimal from "decimal.js";
+import {arrayEquals} from "../utility/array-utility/arrayEquals.js";
 
 export class Vector implements Comparable, Iterable<Decimal> {
 	public components: Decimal[];

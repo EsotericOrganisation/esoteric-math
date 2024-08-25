@@ -1,10 +1,10 @@
-import {HyperCube} from "./classes/HyperCube";
-import {HyperRectangle} from "./classes/HyperRectangle";
-import {Matrix} from "./classes/Matrix";
-import {Shape} from "./classes/Shape";
-import {Square} from "./classes/Square";
-import {Vector} from "./classes/Vector";
-import {Vertex} from "./classes/Vertex";
+import {HyperCube} from "./classes/HyperCube.js";
+import {HyperRectangle} from "./classes/HyperRectangle.js";
+import {Matrix} from "./classes/Matrix.js";
+import {Shape} from "./classes/Shape.js";
+import {Square} from "./classes/Square.js";
+import {Vector} from "./classes/Vector.js";
+import {Vertex} from "./classes/Vertex.js";
 
 export {
     HyperCube,
