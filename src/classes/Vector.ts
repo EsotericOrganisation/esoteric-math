@@ -1,4 +1,4 @@
-import {Comparable} from "../interfaces/Comparable";
+import {Comparable} from "../interfaces/Comparable.js";
 import {arrayEquals} from "../utility/array-utility.js";
 import Decimal from "decimal.js";
 

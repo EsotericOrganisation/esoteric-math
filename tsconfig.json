@@ -2,12 +2,8 @@
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "dist",
-		"lib": ["ES6"],
-		"types": ["node"],
-		"moduleDetection": "force",
-		"esModuleInterop": true,
-		"target": "ES2020",
-		"moduleResolution": "node"
-	},
-	"exclude": ["dist"]
+
+		"target": "ESNext",
+		"moduleResolution": "nodenext"
+	}
 }
