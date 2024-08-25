@@ -1,7 +1,6 @@
 import {arrayEquals} from "../array-utility/arrayEquals.js";
-import {equals} from "../equals.js";
 
-export function setEquals<T>(a: Set<T>, b: Set<T>) {
+export function setEquals(a: Set<any>, b: Set<any>) {
     if (a.size !== b.size) {
         return false;
     }
@@ -10,18 +9,4 @@ export function setEquals<T>(a: Set<T>, b: Set<T>) {
     const bArray = [...b];
 
     return arrayEquals(aArray, bArray);
-}
-
-export function setDifference<T>(a: Set<T>, b: Set<T>) {
-    return new Set(Array.from(a).filter((element) => !includes(b, element)));
-}
-
-export function includes<T>(set: Set<T>, searchElement: T) {
-    for (const element of set) {
-        if (equals(element, searchElement)) {
-            return true;
-        }
-    }
-
-    return false;
 }

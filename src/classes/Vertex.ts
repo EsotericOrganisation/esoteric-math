@@ -4,6 +4,7 @@ import {Decimal} from "decimal.js";
 import {setEquals} from "../utility/set-utility/setEquals.js";
 
 export class Vertex extends Vector implements Comparable, Iterable<Decimal> {
+
 	public connectedVertices: Set<Vertex>;
 
 	constructor(components: Decimal[], ...connectedVertices: Vertex[]) {

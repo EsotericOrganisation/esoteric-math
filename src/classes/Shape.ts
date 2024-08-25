@@ -3,6 +3,7 @@ import {Vertex} from "./Vertex.js";
 import {arrayEquals} from "../utility/array-utility/arrayEquals.js";
 
 export class Shape {
+
 	public vertices: Set<Vertex>;
 
 	constructor(vertices: Set<Vertex> = new Set()) {

@@ -1,5 +1,5 @@
-import {includes} from "./arrayIncludesElement.js";
+import {arrayIncludesElement} from "./arrayIncludesElement.js";
 
 export function arrayDifference(a: any[], b: any[]) {
-    return a.filter((element) => !includes(b, element));
+    return a.filter((element) => !arrayIncludesElement(b, element));
 }
