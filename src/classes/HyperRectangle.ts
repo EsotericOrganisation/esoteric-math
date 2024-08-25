@@ -43,13 +43,9 @@ export class HyperRectangle extends Shape {
 	public get sideLengths() {
 		const sideLengths = new Array(this.dimension);
 
-		console.log(this.dimension);
-
 		for (const vertex of this.vertices) {
 			for (let i = 0; i < vertex.components.length; i++) {
 				const component = vertex.components[i];
-
-				console.log(component);
 
 				if (!component.equals(0)) {
 					sideLengths[i] = component;
