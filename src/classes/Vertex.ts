@@ -31,6 +31,10 @@ export class Vertex extends Vector implements Comparable, Iterable<Decimal> {
 	}
 
 	public equals(otherVertex: Vertex) {
+		if (otherVertex.isConnectedTo(this)) {
+			return false;
+		}
+
 		return (
 			super.equals(otherVertex) &&
 			setEquals(this.connectedVertices, otherVertex.connectedVertices)
