@@ -1,14 +1,17 @@
 import {arrayEquals} from "./array-utility/arrayEquals.js";
 import {objectEquals} from "./object-utility/objectEquals.js";
 import {setEquals} from "./set-utility/setEquals.js";
+import {Comparable} from "../interfaces/Comparable.js";
 
-export function equals(a: any, b: any) {
+type ComparableValue = Comparable | Comparable[] | Set<Comparable>;
+
+export function equals(a: ComparableValue, b: ComparableValue) {
     if (Array.isArray(a) && Array.isArray(b)) {
         return arrayEquals(a, b);
     }
 
     if (a instanceof Object && b instanceof Object) {
-        if ((a as Object).hasOwnProperty("equals")) {
+        if ("equals" in a) {
             return a.equals(b);
         }
 
