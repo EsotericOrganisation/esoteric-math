@@ -1,10 +1,11 @@
 import {Comparable} from "../interfaces/Comparable";
 import {arrayEquals} from "../utility/array-utility.js";
+import Decimal from "decimal.js";
 
-export class Vector implements Comparable, Iterable<number> {
-	public components: number[];
+export class Vector implements Comparable, Iterable<Decimal> {
+	public components: Decimal[];
 
-	constructor(components: number[]) {
+	constructor(components: Decimal[]) {
 		this.components = components;
 	}
 
@@ -32,16 +33,16 @@ export class Vector implements Comparable, Iterable<number> {
 		}
 
 		for (let i = 0; i < this.components.length; i++) {
-			this.components[i] += otherVector.components[i];
+			this.components[i].add(otherVector.components[i]);
 		}
 	}
 
-	[Symbol.iterator](): Iterator<number> {
+	[Symbol.iterator](): Iterator<Decimal> {
 		let index = 0;
 		const components = this.components;
 
 		return {
-			next(): IteratorResult<number> {
+			next(): IteratorResult<Decimal> {
 				if (index < components.length) {
 					return {
 						value: components[index++],

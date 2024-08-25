@@ -1,11 +1,12 @@
 import {Comparable} from "../interfaces/Comparable.js";
 import {setEquals} from "../utility/set-utility.js";
 import {Vector} from "./Vector.js";
+import Decimal from "decimal.js";
 
-export class Vertex extends Vector implements Comparable, Iterable<number> {
+export class Vertex extends Vector implements Comparable, Iterable<Decimal> {
 	public connectedVertices: Set<Vertex>;
 
-	constructor(components: number[], ...connectedVertices: Vertex[]) {
+	constructor(components: Decimal[], ...connectedVertices: Vertex[]) {
 		super(components);
 
 		this.connectedVertices = new Set(connectedVertices);
@@ -35,12 +36,12 @@ export class Vertex extends Vector implements Comparable, Iterable<number> {
 		);
 	}
 
-	[Symbol.iterator](): Iterator<number> {
+	[Symbol.iterator](): Iterator<Decimal> {
 		let index = 0;
 		const components = this.components;
 
 		return {
-			next(): IteratorResult<number> {
+			next(): IteratorResult<Decimal> {
 				if (index < components.length) {
 					return {
 						value: components[index++],

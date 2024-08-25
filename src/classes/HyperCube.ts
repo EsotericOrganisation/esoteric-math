@@ -1,7 +1,8 @@
 import {HyperRectangle} from "./HyperRectangle.js";
+import Decimal from "decimal.js";
 
 export class HyperCube extends HyperRectangle {
-	constructor(sideLength: number, dimensions: number) {
+	constructor(sideLength: Decimal, dimensions: Decimal) {
 		super(Array(dimensions).fill(sideLength));
 	}
 

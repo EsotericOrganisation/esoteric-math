@@ -30,7 +30,7 @@ export class Matrix {
 
 			let i = row;
 
-			while (matrix[i][lead] === 0) {
+			while (matrix[i][lead].equals(0)) {
 				i++;
 				if (i === rowCount) {
 					i = row;
@@ -49,14 +49,14 @@ export class Matrix {
 				const divisor = matrix[row][lead];
 
 				for (let j = 0; j < columnCount; j++) {
-					matrix[row][j] /= divisor;
+					matrix[row][j].div(divisor);
 				}
 
 				for (let j = 0; j < rowCount; j++) {
 					if (j !== row) {
 						const factor = matrix[j][lead];
 						for (let k = 0; k < columnCount; k++) {
-							matrix[j][k] -= factor * matrix[row][k];
+							matrix[j][k].sub(matrix[row][k].times(factor));
 						}
 					}
 				}
@@ -67,7 +67,7 @@ export class Matrix {
 		let rank = 0;
 
 		for (const row of matrix) {
-			if (row.some((entry) => entry !== 0)) {
+			if (row.some((entry) => !entry.equals(0))) {
 				rank++;
 			}
 		}

@@ -1,18 +1,19 @@
 import {Shape} from "./Shape.js";
 import {Vector} from "./Vector.js";
 import {Vertex} from "./Vertex.js";
+import Decimal from "decimal.js";
 
 export class HyperRectangle extends Shape {
-	constructor(sideLengths: number[]) {
+	constructor(sideLengths: Decimal[]) {
 		const dimensions = sideLengths.length;
 		const vertices: Set<Vertex> = new Set();
 
 		for (let n = 0; n < Math.pow(2, dimensions); n++) {
 			const binaryString = n.toString(2).padStart(dimensions, "0");
-			const coordinates: number[] = [];
+			const coordinates: Decimal[] = [];
 
 			for (let i = 0; i < dimensions; i++) {
-				coordinates.push(binaryString.charAt(i) === "0" ? 0 : sideLengths[i]);
+				coordinates.push(binaryString.charAt(i) === "0" ? new Decimal(0) : sideLengths[i]);
 			}
 
 			vertices.add(new Vertex(coordinates));
@@ -26,7 +27,7 @@ export class HyperRectangle extends Shape {
 
 				const componentToChange = newVectorComponents[i];
 
-				const changeValue = componentToChange === 0 ? sideLengths[i] : 0;
+				const changeValue = componentToChange.equals(0) ? sideLengths[i] : new Decimal(0);
 
 				newVectorComponents[i] = changeValue;
 
@@ -50,7 +51,7 @@ export class HyperRectangle extends Shape {
 
 				console.log(component);
 
-				if (component !== 0) {
+				if (!component.equals(0)) {
 					sideLengths[i] = component;
 				}
 			}
