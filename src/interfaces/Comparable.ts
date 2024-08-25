@@ -1,3 +1,3 @@
 export interface Comparable {
-	equals(otherObject: this): boolean;
+	equals(otherObject: typeof this): boolean;
 }
