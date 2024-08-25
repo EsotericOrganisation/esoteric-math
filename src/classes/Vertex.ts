@@ -15,6 +15,10 @@ export class Vertex extends Vector implements Comparable, Cloneable {
 	}
 
 	public connect(otherVertex: Vertex) {
+		if (this.equals(otherVertex)) {
+			throw new Error("Cannot connect a vertex to itself");
+		}
+
 		this.connectedVertices.add(otherVertex);
 		otherVertex.connectedVertices.add(this);
 	}
