@@ -4,7 +4,7 @@ import {Decimal} from "decimal.js";
 import {setEquals} from "../utility/set-utility/setEquals.js";
 import {Cloneable} from "../interfaces/Cloneable.js";
 
-export class Vertex extends Vector implements Comparable, Cloneable, Iterable<Decimal> {
+export class Vertex extends Vector implements Comparable, Cloneable {
 
 	public connectedVertices: Set<Vertex>;
 
@@ -44,23 +44,5 @@ export class Vertex extends Vector implements Comparable, Cloneable, Iterable<De
 
 	public override clone() {
 		return new Vertex(this.components, ...this.connectedVertices);
-	}
-
-	[Symbol.iterator](): Iterator<Decimal> {
-		let index = 0;
-		const components = this.components;
-
-		return {
-			next(): IteratorResult<Decimal> {
-				if (index < components.length) {
-					return {
-						value: components[index++],
-						done: false
-					};
-				} else {
-					return {value: undefined, done: true};
-				}
-			}
-		};
 	}
 }
