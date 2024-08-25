@@ -17,8 +17,7 @@
 		"test": "node ."
 	},
 	"dependencies": {
-		"decimal.js": "^10.4.3",
-		"fs": "^0.0.1-security"
+		"decimal.js": "^10.4.3"
 	},
 	"devDependencies": {
 		"typescript": "^5.5.4",
