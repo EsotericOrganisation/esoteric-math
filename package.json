@@ -18,8 +18,7 @@
 	},
 	"dependencies": {
 		"decimal.js": "^10.4.3",
-		"fs": "^0.0.1-security",
-		"mathjs": "^12.4.1"
+		"fs": "^0.0.1-security"
 	},
 	"devDependencies": {
 		"@types/node": "^20.11.25"
