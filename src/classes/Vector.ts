@@ -1,8 +1,9 @@
 import {Comparable} from "../interfaces/Comparable.js";
 import {Decimal} from "decimal.js";
 import {arrayEquals} from "../utility/array-utility/arrayEquals.js";
+import {Cloneable} from "../interfaces/Cloneable.js";
 
-export class Vector implements Comparable, Iterable<Decimal> {
+export class Vector implements Comparable, Cloneable, Iterable<Decimal> {
 
 	public components: Decimal[];
 
@@ -20,6 +21,10 @@ export class Vector implements Comparable, Iterable<Decimal> {
 		}
 
 		return arrayEquals(this.components, otherVector.components);
+	}
+
+	public clone() {
+		return new Vector(this.components);
 	}
 
 	public add(otherVector: Vector) {

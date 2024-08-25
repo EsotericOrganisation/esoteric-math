@@ -2,8 +2,9 @@ import {Comparable} from "../interfaces/Comparable.js";
 import {Vector} from "./Vector.js";
 import {Decimal} from "decimal.js";
 import {setEquals} from "../utility/set-utility/setEquals.js";
+import {Cloneable} from "../interfaces/Cloneable.js";
 
-export class Vertex extends Vector implements Comparable, Iterable<Decimal> {
+export class Vertex extends Vector implements Comparable, Cloneable, Iterable<Decimal> {
 
 	public connectedVertices: Set<Vertex>;
 
@@ -39,6 +40,10 @@ export class Vertex extends Vector implements Comparable, Iterable<Decimal> {
 			super.equals(otherVertex) &&
 			setEquals(this.connectedVertices, otherVertex.connectedVertices)
 		);
+	}
+
+	public override clone() {
+		return new Vertex(this.components, ...this.connectedVertices);
 	}
 
 	[Symbol.iterator](): Iterator<Decimal> {
