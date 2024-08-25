@@ -1,7 +1,7 @@
 {
 	"name": "esoteric-math",
 	"description": "A library for abnormal, non-standard, and straight up weird math problems that no normal people even think about.",
-	"author":  {
+	"author": {
 		"name": "Slqmy",
 		"url": "https://www.github.com/Slqmy"
 	},
@@ -21,6 +21,7 @@
 		"fs": "^0.0.1-security"
 	},
 	"devDependencies": {
+		"typescript": "^5.5.4",
 		"@types/node": "^20.11.25"
 	},
 	"type": "module"
