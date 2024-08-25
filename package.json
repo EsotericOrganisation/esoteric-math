@@ -1,27 +1,28 @@
 {
-	"name": "coding-plus-math-mini-projects",
-	"version": "1.0.0",
-	"description": "Some of my small projects relating to math and coding.",
-	"main": "index.js",
-	"scripts": {
-		"test": "run"
+	"name": "esoteric-math",
+	"description": "A library for abnormal, non-standard, and straight up weird math problems that no normal people even think about.",
+	"author":  {
+		"name": "Slqmy",
+		"url": "https://www.github.com/Slqmy"
 	},
 	"keywords": [
-		"coding",
+		"weird",
 		"math",
-		"mini-project",
-		"project",
-		"small"
+		"library"
 	],
-	"author": "Slqmy",
 	"license": "MIT",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "node ."
+	},
 	"dependencies": {
 		"decimal.js": "^10.4.3",
 		"fs": "^0.0.1-security",
 		"mathjs": "^12.4.1"
 	},
-	"type": "module",
 	"devDependencies": {
 		"@types/node": "^20.11.25"
-	}
+	},
+	"type": "module"
 }
