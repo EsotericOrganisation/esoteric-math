@@ -11,7 +11,7 @@
 		"library"
 	],
 	"license": "MIT",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "npx tsup src --format esm --dts",
