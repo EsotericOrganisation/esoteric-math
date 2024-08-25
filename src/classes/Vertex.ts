@@ -1,6 +1,6 @@
 import {Comparable} from "../interfaces/Comparable.js";
 import {Vector} from "./Vector.js";
-import Decimal from "decimal.js";
+import {Decimal} from "decimal.js";
 import {setEquals} from "../utility/set-utility/setEquals.js";
 
 export class Vertex extends Vector implements Comparable, Iterable<Decimal> {

@@ -1,7 +1,7 @@
 import {Shape} from "./Shape.js";
 import {Vector} from "./Vector.js";
 import {Vertex} from "./Vertex.js";
-import Decimal from "decimal.js";
+import {Decimal} from "decimal.js";
 
 export class HyperRectangle extends Shape {
 	constructor(sideLengths: Decimal[]) {
