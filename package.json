@@ -13,6 +13,7 @@
 	"license": "MIT",
 	"version": "0.0.7",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
 		"build": "npx tsup src --format esm --dts",
 		"test": "node ."
