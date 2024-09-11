@@ -49,4 +49,18 @@ export class Vertex extends Vector implements Comparable, Cloneable {
 	public override clone() {
 		return new Vertex(this.components, ...this.connectedVertices);
 	}
+
+	private createNonRecursiveClone() {
+		const clone = this.clone();
+
+		const connectedVerticesArray = [...clone.connectedVertices];
+
+		for (let i = 0; i < connectedVerticesArray.length; i++) {
+			const connectedVertex = connectedVerticesArray[i];
+
+			const secondLevelConnectedVerticesArray = [...connectedVertex];
+		}
+
+		return clone;
+	}
 }
